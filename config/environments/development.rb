@@ -69,6 +69,8 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.action_mailer.default_url_options = { host: 'projects.local', port: 3000 }
+  config.action_mailer.delivery_method = :letter_opener_web 
+
   config.hosts << "projects.local:3000"
 end
 
