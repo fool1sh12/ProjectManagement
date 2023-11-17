@@ -50,7 +50,7 @@ gem "image_processing", "~> 1.2"
 
 gem 'simple_form'
 gem 'devise'
-
+gem 'devise-bootstrap-views', '~> 1.0'
 
 
 group :development, :test do
