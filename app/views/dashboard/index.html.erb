@@ -12,8 +12,8 @@
     <% Project.all.each do |project| %>
       <tr>
         <td><%= link_to project.name, project_path(project) %></td>
-        <td><%=  %></td>
-        <td><%= project.complete_counter  %></td>
+        <td><%= project.percentage %></td>
+        <td><%= project.overdue_counter  %></td>
       </tr>
     <% end %>
   </tbody>
