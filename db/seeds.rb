@@ -4,4 +4,15 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+
+User.create(
+  :email => "admin@projects.local", 
+  :password => "Pass1234"
+)
+
+1.upto(3) do |index|
+  Project.create(
+    :name => "Project #{index}",
+    :description => "Random Text"
+  )
+end
