@@ -16,3 +16,14 @@ User.create(
     :description => "Random Text"
   )
 end
+
+Project.all.each do |project|
+  1.upto(5) do |index|
+    random_boolean = [true, false].sample
+    project.tasks.create(
+      :name => "Task #{index}",
+      :due => Date.today - (rand(11)-5),
+      :complete => random_boolean
+    )
+  end
+end
