@@ -6,4 +6,5 @@ class Task < ApplicationRecord
       "Complete"
     end
   end
+
 end
