@@ -4,7 +4,7 @@ class Project < ApplicationRecord
   def overdue_counter 
     counter = 0
     tasks.all.each do |task|
-      if task.complete.blank?
+      if task.complete.blank? && task.due < Date.today
         counter = counter + 1
       end
     end
