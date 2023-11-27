@@ -28,7 +28,7 @@
         <td><%= task.due %></td>
         <td><%= task.complete %></td>
         <td><%= task.overdue_calculator %></td>
-        <td><span class="badge text-bg-success"><%= task.complete_test %></span></td>
+        <td><span class="<%= task.class_selecter %>"><%= task.complete_test %></span></td>
       </tr>
     <% end %>
   </tbody>
