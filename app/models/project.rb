@@ -2,13 +2,10 @@ class Project < ApplicationRecord
   has_many :tasks
  
   def overdue_counter 
-    counter = 0
-    tasks.all.each do |task|
-      if task.complete.blank? && task.due < Date.today
-        counter = counter + 1
-      end
+    overdue_tasks = tasks.select do |task|
+      task.complete.blank? && task.due < Date.today
     end
-    return counter
+    return overdue_tasks.count
   end
 
   def counter 
@@ -20,7 +17,12 @@ class Project < ApplicationRecord
   end
 
   def percentage
-    "#{((completion_counter.to_f / counter.to_f) * 100.0).to_i}%" 
+    if counter != 0
+      "#{((completion_counter.to_f / counter.to_f) * 100.0).to_i}%" 
+    else
+      "0%"
+    end
   end
+
 
 end
