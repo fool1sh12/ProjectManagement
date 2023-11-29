@@ -2,7 +2,7 @@ class Task < ApplicationRecord
   belongs_to :project
 
   def complete_test
-    if complete? && due < Date.today
+    if complete?
       "Complete"
     elsif due < Date.today && complete? == false
       "Overdue"
